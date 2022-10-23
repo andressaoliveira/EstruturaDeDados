@@ -52,6 +52,12 @@ public class FilaImpl<T> implements Fila<T> {
     }
 
     @Override
+    public T rear(){
+        if (isEmpty()) return null;
+        else return elements[rear];
+    }
+
+    @Override
     public int size() {
         return elements.length;
     }
