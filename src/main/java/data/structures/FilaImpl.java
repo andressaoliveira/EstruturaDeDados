@@ -1,12 +1,12 @@
 package data.structures;
 
-public class FilhaImpl<T> implements Fila<T> {
+public class FilaImpl<T> implements Fila<T> {
     private final T[] elements;
     private int front;
     private int rear;
     private int count;
 
-    public FilhaImpl(int size) {
+    public FilaImpl(int size) {
         if (size <= 0)
             throw new RuntimeException("Tamanho inválido: " + size);
 
@@ -81,7 +81,7 @@ public class FilhaImpl<T> implements Fila<T> {
     }
 
     public static void main(String[] args) {
-        FilhaImpl<Integer> fila = new FilhaImpl<Integer>(4);
+        FilaImpl<Integer> fila = new FilaImpl<Integer>(4);
         fila.enqueue(5);
         fila.enqueue(6);
         fila.enqueue(7);

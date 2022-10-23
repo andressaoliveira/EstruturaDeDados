@@ -8,6 +8,8 @@ public interface Fila<T> {
 
     T front();
 
+    T rear();
+
     int size();
 
     boolean isEmpty();

@@ -1,5 +1,7 @@
 package data.structures;
 
+import java.util.LinkedList;
+
 public class Tree {
     private int data;
     private Tree dir;
@@ -64,6 +66,28 @@ public class Tree {
         }
     }
 
+    public void bfs(){ //busca em largura
+        LinkedList<Tree> fila = new LinkedList<>();
+
+        fila.addFirst(this);
+
+        while(!fila.isEmpty()) {
+//            var no = fila.getFirst();
+
+            var no = fila.removeFirst();
+
+            //adicionar os filhos
+            if (no.esq != null) fila.addLast(no.esq);
+            if (no.dir != null) fila.addLast(no.dir);
+
+            //consumir
+            System.out.println(no.data);
+
+            //remover da fila
+//            fila.removeFirst();
+        }
+    }
+
     public static void main(String[] args) {
         var tree = new Tree(50);
         tree.insert(30);
@@ -80,5 +104,7 @@ public class Tree {
         tree.preOrder();
         System.out.println("--Pos Order---");
         tree.posOrder();
+        System.out.println("--Busca Largura---");
+        tree.bfs();
     }
 }
